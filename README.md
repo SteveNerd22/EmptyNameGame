@@ -3,6 +3,9 @@
 
 #### Breve descrizione, Empty Name Game, altro non è che un roguelike, dungeon crawler che segue i passi e lo stile di [The Binding of Isaac](https://store.steampowered.com/app/113200/The_Binding_of_Isaac/https://store.steampowered.com/app/113200/The_Binding_of_Isaac/) e di altri giochi dello stesso genere come [Enter the Gungeon](https://store.steampowered.com/app/311690/Enter_the_Gungeon/) principalmente per le scelte di gameplay o [Risk of Rain](https://store.steampowered.com/app/248820/Risk_of_Rain_2013/) per la narrazione.
 #### Il nome del gioco è ancora provvisorio, (tantè che non ho ancora deciso definitivamente di inserirlo veramente come nome del progetto) ma per il momento è **"Doomed, Fall Into the Abyss"** però lo considero banale, non mi piace.
+#### Il contesto del gioco è semplice: un piano simile al Purgatorio dantesco, ambientato in un luogo chiamato Abisso, dove le persone sono punite per tutto il dolore che hanno inflitto durante la loro vita. Qui, non ci sono sconti di pena né scorciatoie; più male hai fatto, più male riceverai nell'Abisso.
+
+#### Il gioco vuole proporre, attraverso i suoi personaggi controversi, una riflessione sulla pena che devono scontare coloro che hanno fatto del male agli altri. Il giocatore potrebbe trovarsi ad empatizzare con i personaggi del gioco, nonostante le loro azioni passate, portando alla luce le loro motivazioni e dando voce a chi, nella società, è spesso dimenticato: i carcerati.
 
 
 
