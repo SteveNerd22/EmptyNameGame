@@ -89,7 +89,20 @@ public class PlayerKeyboardHandler implements KeyListener {
         }
 
         if (!leftPressed && !rightPressed && !upPressed && !downPressed) {
+
             active = false;
+
+        } else {
+
+            if(leftPressed)
+                player.setDir(10);
+            if(rightPressed)
+                player.setDir(4);
+            if(upPressed)
+                player.setDir(1);
+            if(downPressed)
+                player.setDir(7);
+
         }
     }
 }
