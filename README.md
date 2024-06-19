@@ -48,7 +48,7 @@
 + #### Le due ost principali.
 + #### Un'acerba struttura portante per il gioco.
 
-#Roadmap
+# Roadmap
 ### Le prossime features che cerchiamo di aggiungere sono:
 + #### Prime meccaniche di gioco.
 + #### Magari qualche nemico.
