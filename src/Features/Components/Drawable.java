@@ -50,20 +50,20 @@ public interface Drawable {
         g.setColor(originalColor);
     }
 
-    default void drawImageCenter(Graphics2D g, BufferedImage image, int percx, int percy) {
+    default void drawImageCenter(Graphics2D g, BufferedImage image, int widthPerc, int heightPerc, int percx, int percy) {
         int frameWidth = GamePanel.paneWidth;
         int frameHeight = GamePanel.paneHeight;
 
-        int x = (percx * frameWidth) / 1000;
-        int y = (percy * frameHeight) / 1000;
+        int centerX = (percx * frameWidth) / 1000;
+        int centerY = (percy * frameHeight) / 1000;
 
-        int imageWidth = image.getWidth();
-        int imageHeight = image.getHeight();
+        int width = widthPerc * frameWidth/1000;
+        int height = heightPerc * frameHeight/1000;
 
-        int centerX = x - (imageWidth / 2);
-        int centerY = y - (imageHeight / 2);
+        int x = centerX - (width / 2);
+        int y = centerY - (height / 2);
 
-        g.drawImage(image, centerX, centerY, null);
+        g.drawImage(image, x, y, width, height, null);
     }
 
     default void fillRectCenter(Graphics2D g, int width, int height, int percx, int percy) {

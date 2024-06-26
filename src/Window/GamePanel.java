@@ -38,7 +38,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     Thread gameThread;
     static boolean gameRunning = false;
-    static GamePhases phase = GamePhases.Starting;
+    public static GamePhases phase = GamePhases.Starting;
     public static Map map;
     public static Room currentRoom;
     JFrame frame;
@@ -46,7 +46,8 @@ public class GamePanel extends JPanel implements Runnable{
     SoundHandler sounds;
     Player p;
     private MusicHandler m;
-    static Clock clock;
+    public static Clock clock;
+    public static Animation menuBackground;
 
     static {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -134,7 +135,7 @@ public class GamePanel extends JPanel implements Runnable{
         if (gameRunning) {
             gameThread = new Thread(this);
             gameThread.start();
-            phase = GamePhases.Preparing;
+            phase = GamePhases.MainMenu;
         }
     }
 
@@ -147,36 +148,38 @@ public class GamePanel extends JPanel implements Runnable{
 
     private boolean defaultValue() {
         boolean result = true;
+
+        menuBackground = new Animation(60, Animation.genFrames("night", 60), 1, true);
+        clock.addComponent(menuBackground);
+        drawList.add(menuBackground);
+
+        drawList.sort();
+        System.out.println(drawList);
+        return result;
+    }
+
+    private void defaultGameInitValues() {
         sounds.playSound("Track");
         sounds.queueMusic("TrackDistorta");
         map = new Map(1);
         map.printMap();
         currentRoom = map.getStartingRoom(drawList);
-
-        Animation fire1 = new Animation("fire", new int[]{1, 1, 1},100, 100, 50, 50, 1);
-        Animation fire2 = new Animation("fire", new int[]{2, 2, 2},130, 100, 50, 50, 2);
-        Animation fire3 = new Animation("fire", new int[]{3, 3, 3},160, 100, 50, 50, 1);
-        Animation fire4 = new Animation("fire", new int[]{10, 10, 10},190, 100, 50, 50, 3);
-        Animation player = new Animation("output-onlinegiftools", new int[]{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},100, 200, 200, 200, 2);
-
+        drawList.add(currentRoom);
         p = new Player();
         this.addKeyListener(p.getKeyboardHandler());
         clock.addComponent(p);
         drawList.add(p);
-        //drawList.add(currentRoom);
-        drawList.add(fire1);
-        drawList.add(fire2);
-        drawList.add(fire3);
-        drawList.add(fire4);
-        drawList.add(player);
-        clock.addComponent(fire1);
-        clock.addComponent(fire2);
-        clock.addComponent(fire3);
-        clock.addComponent(fire4);
-        clock.addComponent(player);
         drawList.sort();
-        System.out.println(drawList);
-        return result;
+    }
+
+    public void changeGamePhase(GamePhases gamePhase) {
+        GamePhases oldPhase = phase;
+        phase = gamePhase;
+        if(oldPhase == GamePhases.MainMenu && phase == GamePhases.inGame) {
+            defaultGameInitValues();
+            clock.removeComponent(menuBackground);
+            drawList.remove(menuBackground);
+        }
     }
 
     public void paintComponent(Graphics g) {
@@ -185,6 +188,7 @@ public class GamePanel extends JPanel implements Runnable{
         g2.fillRect(0, 0, paneWidth, paneHeight);
 
         drawList.draw(g2);
+        System.out.println(phase);
 
         g2.dispose();
     }
