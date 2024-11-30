@@ -13,10 +13,6 @@
 
 ## Programmazione:
 ### Capo Sviluppatore:
-#### Questo progetto nasce da un gruppo piccino, ma con tanta voglia di portare qualcosa a termine.
-#### Inzio col presentarmi io che ho iniziato questo progetto, sono **SteveNerd** e da qualche anno mi dedico nella progettazione di piccole opere fallimentari in java. Utilizzo principalmente Java perchè lo considero il giusto compromesso tra velocità di esecuzione e semplicità d'uso, riconosco che non sia il linguaggio più piacevole da utilizzare, ma è comunque user-friendly nel setup del progetto dandoti quasi la precisione di un linguaggio a basso livello e al contempo la compatibilità e portabilità di un linguaggio ad alto livello, tutto sommato è anche facile da usare basta sopportare la lagna di scrivere public static void main String args. Tutto questo preambolo solo per sottolineare 2 cose.
-#### 1. che sono un fissato di java.
-#### 2. le motivazioni che mi hanno portato a         scegliere questo linguaggio per programmare il gioco.
 #### Questo è il primo progetto che considero veramente tale e voglio portarlo veramente a termine, grazie ai miei amichetti che mi stanno dando una mano che potete conoscere qua sotto.
 #### (si, mi sono concesso il titolo di capo sviluppatore, in fondo comunque rimane un progetto che ho iniziato io e ho un minimo di pretese su come deve uscire fuori)
 
